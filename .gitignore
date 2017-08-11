@@ -1,0 +1,6 @@
+build.zip
+*.tfstate*
+.DS_Dtore
+.vscode
+.DS_Dtore
+.DS_Store

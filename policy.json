@@ -1,0 +1,38 @@
+{
+    "Version": "2008-10-17",
+    "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": ["arn:aws:s3:::mogreps-g/*"]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": ["arn:aws:s3:::mogreps-uk/*"]
+        },
+
+        {
+            "Effect": "Allow",
+            "Action": "logs:CreateLogGroup",
+            "Resource": "arn:aws:logs:${region}:${account_id}:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": [
+                "arn:aws:logs:${region}:${account_id}:/aws/lambda/aws_lambda_handeler*"
+            ]
+        }
+    ]
+}
